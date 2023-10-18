@@ -126,15 +126,60 @@ const ProductDetails = async ({ params: { id } }: Props) => {
             <div className="flex gap-5 flex-wrap">
               <PriceInfoCard
                 title="Current Price"
-                iconSrc="/assets/icons/price-tag,svg"
+                iconSrc="/assets/icons/price-tag.svg"
                 value={`${product.currency} ${formatNumber(
                   product.currentPrice
                 )}`}
-                borderColor="#b6dbff"
+              />
+              <PriceInfoCard
+                title="Average Price"
+                iconSrc="/assets/icons/chart.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.averagePrice
+                )}`}
+              />
+              <PriceInfoCard
+                title="Highest Price"
+                iconSrc="/assets/icons/arrow-up.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.highestPrice
+                )}`}
+              />
+              <PriceInfoCard
+                title="Lowest Price"
+                iconSrc="/assets/icons/arrow-down.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.lowestPrice
+                )}`}
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col gap-16 border-2 border-red-500">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-2xl text-secondary font-semibold">
+            Product Description
+          </h3>
+
+          <div className="flex flex-col gap-4">
+            {product?.description?.split("\n")}
+          </div>
+        </div>
+
+        <button className="btn w-fit mx-auto flex items-center justify-center gap-3 min-w-[200px]">
+          <Image
+            src="/assets/icons/bag.svg"
+            alt="check"
+            width={22}
+            height={22}
+          />
+
+          <Link href="/" className="text-base text-white">
+            Buy Now
+          </Link>
+        </button>
       </div>
     </div>
   );
