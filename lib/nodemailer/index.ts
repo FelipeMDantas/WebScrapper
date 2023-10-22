@@ -101,7 +101,7 @@ export const sendEmail = async (
     subject: emailContent.subject,
   };
 
-  transporter.sendEmail(mailOptions, (error: any, info: any) => {
+  transporter.sendMail(mailOptions, (error: any, info: any) => {
     if (error) return console.log(error);
 
     console.log("Email sent: ", info);
