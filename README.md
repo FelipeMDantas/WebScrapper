@@ -12,6 +12,12 @@
 
 > Via Web Scraping, this application is able to retrieve and neatly exhibit different categories of data regarding any one of the Amazon products. The app can also compare current and previous prices.
 
+### Take a look at the page
+
+<img src = images/page_gif.gif>
+
+## Tech
+
 A couple of technologies were employed in this project. Among them:
 
 - [NextJS] - a React Framework for the Web
